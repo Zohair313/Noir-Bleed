@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thank You</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Overlay to make text readable over video */
+      .overlay {
+        background: rgba(0, 0, 0, 0.4);
+      }
+    </style>
+  </head>
+  <body class="m-0 p-0 overflow-hidden">
+    <!-- Video Background -->
+    <video
+      autoplay
+      muted
+      loop
+      class="absolute top-0 left-0 w-full h-full object-cover"
+    >
+      <source src="thank.mp4" type="video/mp4" />
+    </video>
+
+    <!-- Overlay with Content -->
+    <div
+      class="absolute top-0 left-0 w-full h-full overlay flex flex-col items-center justify-center text-center px-4"
+    >
+      <!-- Animated Thank You Heading -->
+      <h1
+        class="text-4xl md:text-6xl font-bold mb-6 text-yellow-400 animate-bounce drop-shadow-lg"
+      >
+        Thanks for letting us know!
+      </h1>
+
+      <!-- Animated Subtext -->
+      <p
+        class="text-lg md:text-2xl mb-8 text-yellow-200 animate-pulse drop-shadow-md"
+      >
+        We appreciate your subscription. Stay tuned for the latest trends!
+      </p>
+
+      <!-- Back to Home Button -->
+      <a
+        href="index.html"
+        class="px-6 py-3 bg-yellow-400 text-white font-semibold rounded-lg shadow-lg hover:bg-yellow-500 transition duration-300"
+      >
+        Back to Home
+      </a>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Cart Functionality</title>
+    <script src="cart-utils.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        button { margin: 5px; padding: 10px; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background: #0056b3; }
+        #result { margin: 20px 0; padding: 10px; border: 1px solid #ddd; background: #f8f9fa; }
+        .debug { margin-top: 20px; padding: 10px; border: 1px solid #ccc; background: #fff3cd; }
+    </style>
+</head>
+<body>
+    <h1>Test Cart Functionality</h1>
+    
+    <div>
+        <button onclick="testCart()">Add Test Product</button>
+        <button onclick="viewCart()">View Cart Contents</button>
+        <button onclick="clearCart()">Clear Cart</button>
+        <button onclick="checkLocalStorage()">Check localStorage</button>
+    </div>
+    
+    <div id="result"></div>
+    
+    <div class="debug">
+        <h3>Debug Information:</h3>
+        <div id="debugInfo"></div>
+    </div>
+
+    <script>
+        function testCart() {
+            const product = {
+                id: cartUtils.generateProductId(),
+                name: "Test Product",
+                price: "PKR 1,000",
+                image: "test.jpg",
+                color: "black",
+                size: "M",
+                quantity: 1
+            };
+
+            cartUtils.addToCart(product);
+            document.getElementById("result").innerHTML = "✅ Test product added to cart! Check console for details.";
+            console.log("Test product added:", product);
+            viewCart();
+        }
+
+        function viewCart() {
+            const cart = cartUtils.getCart();
+            const debugInfo = document.getElementById("debugInfo");
+            
+            debugInfo.innerHTML = `
+                <strong>Cart Contents:</strong><br>
+                <pre>${JSON.stringify(cart, null, 2)}</pre>
+                <strong>Cart Item Count:</strong> ${cartUtils.getCartItemCount()}<br>
+                <strong>localStorage Key:</strong> ${cartUtils.cartKey}
+            `;
+            
+            document.getElementById("result").innerHTML = `Cart contains ${cart.length} item(s)`;
+        }
+
+        function clearCart() {
+            cartUtils.clearCart();
+            document.getElementById("result").innerHTML = "✅ Cart cleared!";
+            viewCart();
+        }
+
+        function checkLocalStorage() {
+            const debugInfo = document.getElementById("debugInfo");
+            const allStorage = {};
+            
+            for (let i = 0; i < localStorage.length; i++) {
+                const key = localStorage.key(i);
+                allStorage[key] = localStorage.getItem(key);
+            }
+            
+            debugInfo.innerHTML = `
+                <strong>All localStorage Contents:</strong><br>
+                <pre>${JSON.stringify(allStorage, null, 2)}</pre>
+            `;
+            
+            document.getElementById("result").innerHTML = "LocalStorage contents displayed above";
+        }
+
+        // Initialize debug info on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            viewCart();
+            console.log('Cart utilities initialized. localStorage support:', !!window.localStorage);
+        });
+    </script>
+</body>
+</html>

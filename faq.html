@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAQ's - Shopping Guide</title>
+    <link rel="icon" type="image/x-icon" href="logo-removebg-preview.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .fade {
+        opacity: 0;
+        transform: translateY(10px);
+        transition: opacity 0.4s ease, transform 0.4s ease;
+      }
+      .fade.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100">
+    <!-- Navbar -->
+    <header
+      class="w-full flex items-center justify-between px-4 sm:px-6 py-4 bg-black z-40"
+    >
+      <div class="flex items-center space-x-2">
+        <!-- Menu icon -->
+        <button id="openMenu" class="text-white text-xl sm:text-2xl">
+          &#9776;
+        </button>
+        <a href="index.html" class="flex items-center space-x-2">
+          <h3 class="text-xl sm:text-2xl md:text-3xl font-bold text-white">
+            NOIR
+          </h3>
+          <!-- Heroicon cart -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6 sm:h-8 sm:w-8 text-yellow-500"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.5 6H19m-12 0a1 1 0 11-2 0 1 1 0 012 0zm12 0a1 1 0 11-2 0 1 1 0 012 0z"
+            />
+          </svg>
+          <h3 class="text-xl sm:text-2xl md:text-3xl font-bold text-white">
+            BLEED
+          </h3>
+        </a>
+      </div>
+      <!-- Icons -->
+      <div class="flex items-center space-x-4">
+        <!-- Search Icon -->
+        <button id="searchIcon" class="transition transform hover:scale-125">
+          <svg
+            viewBox="0 0 24 24"
+            class="w-5 h-5"
+            stroke="white"
+            fill="none"
+            stroke-width="2"
+          >
+            <circle cx="11" cy="11" r="7"></circle>
+            <line x1="16.65" y1="16.65" x2="21" y2="21"></line>
+          </svg>
+        </button>
+        <!-- Search Bar (Hidden by Default) -->
+        <div
+          id="searchBar"
+          class="fixed top-14 left-0 w-full flex justify-center px-4 opacity-0 scale-y-0 transform transition-all duration-300 origin-top z-50"
+        >
+          <input
+            type="text"
+            placeholder="Search here..."
+            class="w-full max-w-md px-4 py-2 rounded-md shadow-lg border border-gray-300 focus:ring-yellow-500 focus:border-yellow-500"
+          />
+        </div>
+        <!-- Account Icon -->
+        <a href="login.html">
+          <svg
+            viewBox="0 0 24 24"
+            class="w-5 h-5"
+            stroke="white"
+            fill="none"
+            stroke-width="2"
+          >
+            <circle cx="12" cy="8" r="4"></circle>
+            <path d="M4 20c0-4 4-6 8-6s8 2 8 6"></path>
+          </svg>
+        </a>
+
+        <!-- Cart Icon -->
+        <a href="cart.html">
+          <svg
+            viewBox="0 0 24 24"
+            class="w-5 h-5"
+            stroke="white"
+            fill="none"
+            stroke-width="2"
+          >
+            <path d="M6 8h12l1 12H5L6 8z"></path>
+            <path d="M9 8V6a3 3 0 0 1 6 0v2"></path>
+          </svg>
+        </a>
+      </div>
+    </header>
+
+    <!-- Side Menu -->
+    <aside
+      id="sideMenu"
+      class="fixed top-0 left-0 h-full w-64 sm:w-80 bg-gray-900 text-white transform -translate-x-full side-menu z-50"
+    >
+      <div
+        class="p-4 sm:p-6 border-b border-gray-700 flex justify-between items-center"
+      >
+        <h2 class="text-lg font-bold">Products</h2>
+        <button id="closeMenu" class="text-2xl">&times;</button>
+      </div>
+      <nav class="p-4 sm:p-6 space-y-4">
+        <a
+          href="all2.html"
+          class="block hover:text-gray-400 text-sm sm:text-base"
+          >New Arrivals</a
+        >
+        <a
+          href="all5.html"
+          class="block hover:text-gray-400 text-sm sm:text-base"
+          >T-Shirts & Shirts</a
+        >
+        <a
+          href="all6.html"
+          class="block hover:text-gray-400 text-sm sm:text-base"
+          >UniSex Hoodies</a
+        >
+        <a
+          href="all4.html"
+          class="block hover:text-gray-400 text-sm sm:text-base"
+          >Modern Classic</a
+        >
+        <a
+          href="all3.html"
+          class="block hover:text-gray-400 text-sm sm:text-base"
+          >Trendy Deals</a
+        >
+      </nav>
+    </aside>
+
+    <body class="bg-gray-100">
+      <div class="container mx-auto py-10 px-4 md:px-8 flex gap-6">
+        <!-- Sidebar -->
+        <aside class="w-1/4 bg-white shadow rounded-lg p-4">
+          <h2 class="text-lg font-bold mb-4">FAQ's / Shopping Guide</h2>
+          <ul class="space-y-2">
+            <li>
+              <button
+                onclick="showContent('login')"
+                class="w-full text-left px-3 py-2 rounded-lg hover:bg-yellow-100"
+              >
+                Log In / Sign Up
+              </button>
+            </li>
+            <li>
+              <button
+                onclick="showContent('buy')"
+                class="w-full text-left px-3 py-2 rounded-lg hover:bg-yellow-100"
+              >
+                How to Buy
+              </button>
+            </li>
+            <li>
+              <button
+                onclick="showContent('payment')"
+                class="w-full text-left px-3 py-2 rounded-lg hover:bg-yellow-100"
+              >
+                Payment
+              </button>
+            </li>
+            <li>
+              <button
+                onclick="showContent('shipping')"
+                class="w-full text-left px-3 py-2 rounded-lg hover:bg-yellow-100"
+              >
+                Shipping & Deliveries
+              </button>
+            </li>
+            <li>
+              <button
+                onclick="showContent('returns')"
+                class="w-full text-left px-3 py-2 rounded-lg hover:bg-yellow-100"
+              >
+                Exchange & Returns
+              </button>
+            </li>
+            <li>
+              <button
+                onclick="showContent('about')"
+                class="w-full text-left px-3 py-2 rounded-lg hover:bg-yellow-100"
+              >
+                About Us
+              </button>
+            </li>
+            <li>
+              <button
+                onclick="showContent('contact')"
+                class="w-full text-left px-3 py-2 rounded-lg hover:bg-yellow-100"
+              >
+                Contact
+              </button>
+            </li>
+            <li>
+              <button
+                onclick="showContent('affiliate')"
+                class="w-full text-left px-3 py-2 rounded-lg hover:bg-yellow-100"
+              >
+                Affiliate
+              </button>
+            </li>
+            <li>
+              <button
+                onclick="showContent('press')"
+                class="w-full text-left px-3 py-2 rounded-lg hover:bg-yellow-100"
+              >
+                Press
+              </button>
+            </li>
+            <li>
+              <button
+                onclick="showContent('sitemap')"
+                class="w-full text-left px-3 py-2 rounded-lg hover:bg-yellow-100"
+              >
+                Sitemap
+              </button>
+            </li>
+            <li>
+              <button
+                onclick="showContent('privacy')"
+                class="w-full text-left px-3 py-2 rounded-lg hover:bg-yellow-100"
+              >
+                Privacy Policy
+              </button>
+            </li>
+          </ul>
+        </aside>
+
+        <!-- Content -->
+        <main class="flex-1 bg-white shadow rounded-lg p-6">
+          <div id="login" class="content fade show">
+            <h3 class="text-2xl font-semibold mb-4">Log In / Sign Up</h3>
+            <p class="text-gray-700 mb-3">
+              Creating an account with us makes your shopping experience faster,
+              easier, and more enjoyable. By signing up, you can quickly check
+              out without entering your details every time, track the progress
+              of your orders, and receive exclusive offers and promotions
+              tailored just for you. To create an account, simply click the
+              <strong>Sign Up</strong> button, fill in your information, and
+              you’re ready to start shopping. If you already have an account,
+              logging in is just as easy—enter your email and password, and
+              you’ll have instant access to all your saved preferences. With an
+              account, you can save your favorite items to a wishlist, making it
+              easy to revisit them later or share with friends and family.
+              You’ll also be able to review past purchases, helping you keep
+              track of your style favorites and reorder quickly. Our system
+              personalizes your shopping experience, offering recommendations
+              based on your preferences and browsing history. You can manage
+              your account settings at any time, including updating your contact
+              information or payment options. An account ensures that your
+              shopping journey is smooth, secure, and tailored specifically to
+              you. Ultimately, it’s designed to save you time, enhance
+              convenience, and make every visit more enjoyable.
+            </p>
+            <p class="text-gray-700">
+              With your account, you can save items to your wishlist, review
+              past purchases, and enjoy a personalized shopping experience.
+            </p>
+          </div>
+
+          <div id="buy" class="content fade hidden">
+            <h3 class="text-2xl font-semibold mb-4">How to Buy</h3>
+            <p class="text-gray-700 mb-3">
+              Shopping with us is simple and enjoyable. Start by browsing our
+              extensive collection of carefully curated products, designed to
+              suit a variety of tastes and styles. When you find an item you
+              love, select your preferred size, color, or style to make it truly
+              yours. Click <strong>add to Basket</strong> to save your choice,
+              and continue exploring our collection to find more favorites. We
+              make it easy to keep track of your selections and adjust
+              quantities or options at any time before checkout. Once you’re
+              ready, proceed to checkout to review your order, enter your
+              shipping details, and confirm your purchase. Our website is
+              designed to make this process smooth and hassle-free, so you can
+              focus on the excitement of your new finds. To make shopping even
+              easier, we provide helpful product recommendations tailored to
+              your preferences, as well as sizing guides to ensure the perfect
+              fit. Our styling tips offer inspiration on how to mix and match
+              your selections for any occasion. We are committed to making your
+              shopping experience seamless, enjoyable, and rewarding from start
+              to finish.
+            </p>
+            <p class="text-gray-700">
+              We also offer product recommendations, sizing guides, and styling
+              tips to help you make the best choice.
+            </p>
+          </div>
+
+          <div id="payment" class="content fade hidden">
+            <h3 class="text-2xl font-semibold mb-4">Payment</h3>
+            <p class="text-gray-700 mb-3">
+              We support a wide range of payment options to make shopping with
+              us as convenient as possible. Whether you prefer<strong
+                >Credit or Debit Cards, Mobile Wallets, Bank Transfers, or Cash
+                on Delivery (COD),</strong
+              >
+              we have you covered. All payment transactions are processed
+              securely, with your information fully encrypted to ensure maximum
+              safety and peace of mind. Our goal is to make the checkout process
+              smooth, fast, and hassle-free, so you can focus on enjoying your
+              purchases. We continually review and update our payment solutions
+              to accommodate the latest technologies and customer preferences.
+              With multiple options available, you can choose the method that
+              suits you best, whether you like the simplicity of digital
+              payments or the flexibility of COD. Our system is designed to
+              confirm payments quickly and provide real-time updates on your
+              order status. You can shop confidently knowing that every
+              transaction is handled with the highest level of security. We
+              strive to make your checkout experience seamless, convenient, and
+              tailored to your needs. Ultimately, our flexible payment options
+              are part of our commitment to making shopping with us easy, safe,
+              and enjoyable for everyone.
+            </p>
+            <p class="text-gray-700">
+              We’re continuously working to expand our payment solutions to make
+              checkout seamless for everyone.
+            </p>
+          </div>
+
+          <div id="shipping" class="content fade hidden">
+            <h3 class="text-2xl font-semibold mb-4">Shipping & Deliveries</h3>
+            <p class="text-gray-700 mb-3">
+              We offer reliable nationwide delivery, ensuring your products
+              reach you quickly and safely, typically within<strong>
+                3–5 working days.</strong
+              >
+              Once your order is dispatched, you can easily track your parcel
+              through our tracking page, giving you real-time updates on its
+              progress. To make your shopping even more rewarding, we offer free
+              shipping on all orders above PKR 2,500. Our delivery partners
+              handle each package with care, ensuring it arrives in perfect
+              condition. For international orders, shipping times may vary
+              depending on the destination and customs processing. We aim to
+              provide a smooth and transparent delivery experience, keeping you
+              informed every step of the way. You can also manage your delivery
+              preferences during checkout, including selecting preferred
+              delivery times where available. Our team works hard to minimize
+              delays and provide a reliable service that you can count on.
+              Whether you’re shopping locally or internationally, we strive to
+              get your order to you safely, promptly, and hassle-free. Your
+              satisfaction is our top priority, and we are committed to making
+              every delivery a positive experience.
+            </p>
+            <p class="text-gray-700">
+              Enjoy free shipping on orders above PKR 2,500. For international
+              shipping, estimated delivery times may vary based on destination.
+            </p>
+          </div>
+
+          <div id="returns" class="content fade hidden">
+            <h3 class="text-2xl font-semibold mb-4">Exchange & Returns</h3>
+            <p class="text-gray-700 mb-3">
+              We want you to love every purchase you make with us, but if for
+              any reason you’re not completely satisfied, we’ve made our returns
+              and exchanges process simple and hassle-free. You can return or
+              exchange items within <strong>14 days</strong> of receiving your
+              order. To be eligible, the product must be unused, unwashed, and
+              returned in its original packaging with all tags intact. Once we
+              receive and inspect the returned item, we’ll process your refund
+              or exchange promptly. Please note that certain items, such as sale
+              or intimate wear, may not be eligible for return due to hygiene
+              and clearance policies. Our customer service team is always
+              available to guide you through the process and answer any
+              questions you may have. To make it easier, we provide clear
+              instructions and a step-by-step return procedure on our website.
+              We aim to handle returns quickly and fairly, ensuring you have a
+              smooth experience from start to finish. Your satisfaction is our
+              priority, and we are committed to helping you shop with
+              confidence, knowing that returns and exchanges are always an
+              option if needed.
+            </p>
+            <p class="text-gray-700">
+              Refunds will be processed within 7 working days, and exchanges are
+              subject to stock availability.
+            </p>
+          </div>
+
+          <div id="about" class="content fade hidden">
+            <h3 class="text-2xl font-semibold mb-4">About Us</h3>
+            <p class="text-gray-700 mb-3">
+              We are a fashion-forward brand dedicated to offering high-quality
+              apparel at affordable prices, making style accessible to everyone.
+              Our mission is to inspire confidence, creativity, and
+              self-expression through thoughtfully curated collections.<strong>
+                From everyday casual wear to bold statement pieces, our designs
+                cater to diverse tastes and lifestyles.</strong
+              >
+              Our team of passionate designers works tirelessly to stay ahead of
+              trends while ensuring each piece maintains a timeless appeal. We
+              focus on quality fabrics, precise craftsmanship, and attention to
+              detail, so every item feels as good as it looks. Sustainability
+              and ethical practices are important to us, and we continually
+              strive to make choices that are responsible for people and the
+              planet. Beyond clothing, we aim to create a shopping experience
+              that empowers our customers to embrace their unique style. Every
+              collection is carefully designed to provide versatility, comfort,
+              and flair, allowing you to express yourself effortlessly. We value
+              feedback and continuously innovate to meet the evolving needs of
+              our fashion-conscious community. At our core, we are committed to
+              making fashion not just a statement, but a source of joy and
+              confidence for all.
+            </p>
+            <p class="text-gray-700">
+              From casual wear to statement pieces, our team of designers works
+              tirelessly to bring you styles that resonate with today’s trends
+              while maintaining timeless appeal.
+            </p>
+          </div>
+
+          <div id="contact" class="content fade hidden">
+            <h3 class="text-2xl font-semibold mb-4">Contact</h3>
+            <p class="text-gray-700 mb-3">
+              We’re always here to help and ensure your shopping experience is
+              smooth and enjoyable. If you have any questions or need
+              assistance, you can reach our customer support team via email at
+              support@BLEED.com or by calling our helpline at
+              <strong>+92 300 1234567.</strong> Our dedicated team is available
+              <strong>Monday to Saturday, from 9 AM to 7</strong>
+              PM, ready to provide timely and helpful assistance. Whether you
+              need guidance on placing an order, tracking a delivery, or
+              understanding our products, we are here to support you every step
+              of the way. We strive to respond promptly and resolve any issues
+              efficiently, ensuring your satisfaction. For convenience, you can
+              also find answers to common queries on our website’s FAQ section.
+              Our team values your feedback and continually works to improve our
+              services based on your suggestions. We believe in creating a
+              friendly, approachable, and reliable support experience for all
+              our customers. With us, you can shop confidently, knowing help is
+              just a call or email away. Your satisfaction is our priority, and
+              we are committed to making every interaction positive and
+              reassuring.
+            </p>
+            <p class="text-gray-700">
+              We provide real-time tracking, marketing resources, and timely
+              payouts to all our affiliates.
+            </p>
+          </div>
+
+          <div id="affiliate" class="content fade hidden">
+            <h3 class="text-2xl font-semibold mb-4">Affiliate</h3>
+            <p class="text-gray-700 mb-3">
+              Join our affiliate program and start earning by promoting products
+              you already love. It’s simple and rewarding: sign up to become an
+              affiliate, share your unique referral link with your audience, and
+              earn commissions every time someone shops through your link.
+              Whether you’re a<strong>
+                blogger, influencer, or content creator, our program is designed
+                to help you grow your income while sharing quality fashion with
+                your community</strong
+              >. We provide real-time tracking so you can monitor your clicks,
+              conversions, and earnings with complete transparency. To support
+              your success, we also offer a wide range of marketing resources,
+              including banners, product images, and promotional materials
+              tailored to your needs. Payments are made on time, ensuring you
+              enjoy a smooth and reliable earning experience. With competitive
+              commission rates and a trusted brand behind you, there’s no limit
+              to how much you can achieve. Our affiliate program is built to be
+              flexible, easy to use, and rewarding for partners of all sizes. By
+              joining, you become part of a growing network that shares our
+              passion for fashion and creativity. Start today and turn your
+              influence into an opportunity for consistent, hassle-free
+              earnings.
+            </p>
+            <p class="text-gray-700">
+              We provide real-time tracking, marketing resources, and timely
+              payouts to all our affiliates.
+            </p>
+          </div>
+
+          <div id="press" class="content fade hidden">
+            <h3 class="text-2xl font-semibold mb-4">Press</h3>
+            <p class="text-gray-700 mb-3">
+              For press inquiries, media collaborations, or brand features, our
+              PR team is here to connect with you. We love working with
+              journalists, bloggers, and influencers who share our passion for
+              fashion and creativity. Whether you’re looking to cover our latest
+              collections, explore our brand story, or collaborate on exclusive
+              content, we’re always open to meaningful partnerships. Our team
+              can provide press releases, high-resolution images, and brand
+              assets to support your coverage.<strong>
+                We believe in building strong relationships with the media
+                community and value opportunities to showcase our journey,
+                products, and vision.</strong
+              >
+              From editorial features to social media collaborations, we are
+              excited to explore creative ways to work together. You can reach
+              out to our PR team directly through email, and we’ll ensure your
+              request is handled with care and efficiency. We strive to respond
+              promptly and provide all the information or resources you need.
+              Together, let’s create stories that inspire, resonate, and
+              celebrate fashion in its most authentic form.
+            </p>
+            <p class="text-gray-700">
+              Email us at
+              <a href="mailto:press@brand.com" class="text-yellow-600"
+                >press@brand.com</a
+              >
+              to get in touch.
+            </p>
+          </div>
+
+          <div id="sitemap" class="content fade hidden">
+            <h3 class="text-2xl font-semibold mb-4">Sitemap</h3>
+            <p class="text-gray-700 mb-3">
+              Our sitemap offers a clear and organized overview of all the key
+              sections of our website, making it easier for you to navigate and
+              find exactly what you’re looking for. Whether you want to explore
+              our product categories, learn more about our brand, or access
+              customer support, the sitemap provides quick links to every
+              important page. It acts as a guide, ensuring you don’t miss out on
+              any of the features, resources, or information we provide. From
+              shopping essentials like product collections, account management,
+              and payment options, to helpful sections such as shipping details,
+              FAQs, and contact information, everything is listed in one
+              convenient place.
+              <strong
+                >The sitemap is especially useful for new visitors who want a
+                complete overview of our website’s structure at a glance</strong
+              >. It also improves accessibility by allowing you to jump directly
+              to the content that matters most. We’ve designed it to be simple,
+              user-friendly, and always up to date with the latest sections of
+              our site. With just a click, you can navigate effortlessly and
+              enjoy a smoother, more intuitive browsing experience.
+            </p>
+            <p class="text-gray-700">
+              From product categories to customer service pages, everything is
+              just a click away.
+            </p>
+          </div>
+
+          <div id="privacy" class="content fade hidden">
+            <h3 class="text-2xl font-semibold mb-4">Privacy Policy</h3>
+            <p class="text-gray-700 mb-3">
+              Your privacy matters to us, and we are committed to protecting
+              your personal information with the highest level of care. We
+              collect only the minimal details necessary to process your orders,
+              personalize your experience, and improve our services. Any data
+              you provide is stored securely and used solely for the purposes of
+              enhancing your shopping journey. We never sell, rent, or share
+              your information with third parties without your explicit consent.
+              To give you peace of mind,
+              <strong
+                >all transactions are encrypted, and our systems are regularly
+                updated to meet industry security standards.</strong
+              >
+              You remain in full control of your information and can update or
+              manage your preferences at any time through your account settings.
+              Our privacy practices are transparent, and we are always available
+              to answer questions or provide further clarification on how your
+              data is handled. By choosing to shop with us, you can feel
+              confident knowing your trust and security are our top priorities.
+              We believe in building lasting relationships based on honesty,
+              safety, and respect for your privacy.
+            </p>
+            <p class="text-gray-700">
+              We follow strict security practices to safeguard your information.
+              You can read the full policy anytime for transparency.
+            </p>
+          </div>
+        </main>
+      </div>
+      <!-- Footer (OUTSIDE hero) -->
+      <footer class="bg-black text-white py-4 sm:py-6 px-4 sm:px-8 mt-8">
+        <div
+          class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-8 text-xs sm:text-sm"
+        >
+          <div>
+            <ul class="space-y-1 sm:space-y-2">
+              <li><a href="faq.html" class="hover:underline">FAQ's</a></li>
+              <li>
+                <a href="faq.html" class="hover:underline">Log In/Sign Up</a>
+              </li>
+              <li><a href="faq.html" class="hover:underline">How to Buy</a></li>
+              <li><a href="faq.html" class="hover:underline">Payment</a></li>
+              <li>
+                <a href="faq.html" class="hover:underline"
+                  >Shipping & Deliveries</a
+                >
+              </li>
+              <li>
+                <a href="faq.html" class="hover:underline"
+                  >Exchange & Returns</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="flex justify-center items-center space-x-2">
+            <h3 class="text-xl sm:text-2xl md:text-3xl font-bold">NOIR</h3>
+            <!-- Heroicon cart -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6 sm:h-8 sm:w-8 text-yellow-500"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.5 6H19m-12 0a1 1 0 11-2 0 1 1 0 012 0zm12 0a1 1 0 11-2 0 1 1 0 012 0z"
+              />
+            </svg>
+            <h3 class="text-xl sm:text-2xl md:text-3xl font-bold">BLEED</h3>
+          </div>
+          <div class="text-right">
+            <ul class="space-y-1 sm:space-y-2">
+              <li><a href="faq.html" class="hover:underline">About Us</a></li>
+              <li><a href="faq.html" class="hover:underline">Contact</a></li>
+              <li><a href="faq.html" class="hover:underline">Affiliate</a></li>
+              <li><a href="faq.html" class="hover:underline">Press</a></li>
+              <li><a href="faq.html" class="hover:underline">Sitemap</a></li>
+              <li>
+                <a href="faq.html" class="hover:underline">Privacy Policy</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <p class="text-center text-xs text-gray-400 mt-4">
+          © 2025 NOIR BLEED. All rights reserved.
+        </p>
+      </footer>
+      <script>
+        function showContent(id) {
+          document.querySelectorAll(".content").forEach((el) => {
+            el.classList.add("hidden");
+            el.classList.remove("show");
+          });
+          const target = document.getElementById(id);
+          target.classList.remove("hidden");
+          setTimeout(() => target.classList.add("show"), 10);
+        }
+        const sideMenu = document.getElementById("sideMenu");
+        const openMenu = document.getElementById("openMenu");
+        const closeMenu = document.getElementById("closeMenu");
+        openMenu.addEventListener("click", () => {
+          sideMenu.classList.remove("-translate-x-full");
+        });
+        closeMenu.addEventListener("click", () => {
+          sideMenu.classList.add("-translate-x-full");
+        });
+
+        // 🔍 Search Bar Toggle
+        const searchIcon = document.getElementById("searchIcon");
+        const searchBar = document.getElementById("searchBar");
+        const searchInput = searchBar.querySelector("input");
+        let isVisible = false;
+
+        searchIcon.addEventListener("click", () => {
+          if (!isVisible) {
+            searchBar.classList.remove("opacity-0", "scale-y-0");
+            searchBar.classList.add("opacity-100", "scale-y-100");
+            searchInput.focus();
+            isVisible = true;
+          } else {
+            searchBar.classList.remove("opacity-100", "scale-y-100");
+            searchBar.classList.add("opacity-0", "scale-y-0");
+            isVisible = false;
+          }
+        });
+
+        // 🔎 Hide search bar on ENTER
+        searchInput.addEventListener("keydown", (e) => {
+          if (e.key === "Enter") {
+            e.preventDefault();
+            searchBar.classList.remove("opacity-100", "scale-y-100");
+            searchBar.classList.add("opacity-0", "scale-y-0");
+            isVisible = false;
+            searchInput.value = "";
+          }
+        });
+      </script>
+    </body>
+  </body>
+</html>

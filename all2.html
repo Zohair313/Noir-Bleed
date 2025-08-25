@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NOIR BLEED - new Arrivals</title>
+    <link rel="icon" type="image/x-icon" href="logo-removebg-preview.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100">
+    <header
+      class="fixed top-0 left-0 w-full flex items-center justify-between px-4 py-4 z-40 bg-black bg-opacity-80"
+    >
+      <div class="flex items-center space-x-2">
+        <button id="openMenu" class="text-white text-xl">&#9776;</button>
+        <div class="flex items-center space-x-1">
+<a href="index.html" class="flex items-center space-x-1">
+            <h3 class="text-xl sm:text-2xl md:text-3xl font-bold text-white">
+              NOIR
+            </h3>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6 sm:h-8 sm:w-8 text-yellow-500"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.5 6H19m-12 0a1 1 0 11-2 0 1 1 0 012 0zm12 0a1 1 0 11-2 0 1 1 0 012 0z"
+              />
+            </svg>
+            <h3 class="text-xl sm:text-2xl md:text-3xl font-bold text-white">
+              BLEED
+            </h3>
+          </a>
+        </div>
+      </div>
+
+      <div class="flex items-center space-x-4">
+        <button id="searchIcon" class="transition transform hover:scale-125">
+          <svg
+            viewBox="0 0 24 24"
+            class="w-5 h-5"
+            stroke="white"
+            fill="none"
+            stroke-width="2"
+          >
+            <circle cx="11" cy="11" r="7"></circle>
+            <line x1="16.65" y1="16.65" x2="21" y2="21"></line>
+          </svg>
+        </button>
+        <div
+          id="searchBar"
+          class="fixed top-14 left-0 w-full flex justify-center px-4 opacity-0 scale-y-0 transform transition-all duration-300 origin-top z-50"
+        >
+          <input
+            type="text"
+            placeholder="Search here..."
+            class="w-full max-w-md px-4 py-2 rounded-md shadow-lg border border-gray-300 focus:ring-yellow-500 focus:border-yellow-500"
+          />
+        </div>
+
+        <a href="login.html">
+          <svg
+            viewBox="0 0 24 24"
+            class="w-5 h-5"
+            stroke="white"
+            fill="none"
+            stroke-width="2"
+          >
+            <circle cx="12" cy="8" r="4"></circle>
+            <path d="M4 20c0-4 4-6 8-6s8 2 8 6"></path>
+          </svg>
+        </a>
+
+        <a href="cart.html">
+          <svg
+            viewBox="0 0 24 24"
+            class="w-5 h-5"
+            stroke="white"
+            fill="none"
+            stroke-width="2"
+          >
+            <path d="M6 8h12l1 12H5L6 8z"></path>
+            <path d="M9 8V6a3 3 0 0 1 6 0v2"></path>
+          </svg>
+        </a>
+      </div>
+    </header>
+
+    <aside
+      id="sideMenu"
+      class="fixed top-0 left-0 h-full w-64 sm:w-80 bg-gray-900 text-white transform -translate-x-full side-menu z-50"
+    >
+      <div
+        class="p-4 sm:p-6 border-b border-gray-700 flex justify-between items-center"
+      >
+        <h2 class="text-lg font-bold">Products</h2>
+        <button id="closeMenu" class="text-2xl">&times;</button>
+      </div>
+      <nav class="p-4 sm:p-6 space-y-4">
+        <a
+          href="all2.html"
+          class="block hover:text-gray-400 text-sm sm:text-base"
+          >New Arrivals</a
+        >
+        <a
+          href="all5.html"
+          class="block hover:text-gray-400 text-sm sm:text-base"
+          >T-Shirts & Shirts</a
+        >
+        <a
+          href="all6.html"
+          class="block hover:text-gray-400 text-sm sm:text-base"
+          >UniSex Hoodies</a
+        >
+        <a
+          href="all4.html"
+          class="block hover:text-gray-400 text-sm sm:text-base"
+          >Modern Classic</a
+        >
+        <a
+          href="all3.html"
+          class="block hover:text-gray-400 text-sm sm:text-base"
+          >Trendy Deals</a
+        >
+      </nav>
+    </aside>
+
+    <main id="mainContent" class="pt-20 px-2">
+      <h1 class="text-2xl font-semibold text-center mb-6 text-gray-900">
+        New Arrivals
+      </h1>
+
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+      >
+        <div
+          class="bg-white shadow-lg rounded-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl"
+        >
+          <img
+            src="menhoodies7.jpg"
+            alt="Cropped Slim Hoodie"
+            class="w-full h-80 object-cover"
+          />
+          <div class="p-4">
+            <h3 class="text-lg font-semibold">Cropped Slim Hoodie</h3>
+            <p class="text-gray-700 mt-1">PKR 1,490</p>
+            <div class="flex space-x-2 mt-3">
+              <a href="menhoodies7detail.html" class="w-full">
+                <button
+                  class="w-full py-2 bg-yellow-500 text-white font-semibold rounded-lg transition duration-300 hover:bg-yellow-600 text-sm"
+                >
+                  Product Details
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-white shadow-lg rounded-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl"
+        >
+          <img
+            src="womanproduct3.jpg"
+            alt="Graphic T-Shirt"
+            class="w-full h-80 object-cover"
+          />
+          <div class="p-4">
+            <h3 class="text-lg font-semibold">Graphic T-Shirt</h3>
+            <p class="text-gray-700 mt-1">PKR 1,490</p>
+            <div class="flex space-x-2 mt-3">
+              <a href="fproduct3detail.html" class="w-full">
+                <button
+                  class="w-full py-2 bg-yellow-500 text-white font-semibold rounded-lg transition duration-300 hover:bg-yellow-600 text-sm"
+                >
+                  Product Details
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-white shadow-lg rounded-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl"
+        >
+          <img
+            src="womenhoodies6.jpg"
+            alt="Blended Hoodie"
+            class="w-full h-80 object-cover"
+          />
+          <div class="p-4">
+            <h3 class="text-lg font-semibold">Blended Hoodie</h3>
+            <p class="text-gray-700 mt-1">PKR 1,490</p>
+            <div class="flex space-x-2 mt-3">
+              <a href="womenhoodies6detail.html" class="w-full">
+                <button
+                  class="w-full py-2 bg-yellow-500 text-white font-semibold rounded-lg transition duration-300 hover:bg-yellow-600 text-sm"
+                >
+                  Product Details
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-white shadow-lg rounded-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl"
+        >
+          <img
+            src="menproduct5.jpg"
+            alt="Basic Pique T-Shirt"
+            class="w-full h-80 object-cover"
+          />
+          <div class="p-4">
+            <h3 class="text-lg font-semibold">Basic Pique T-Shirt</h3>
+            <p class="text-gray-700 mt-1">PKR 1,490</p>
+            <div class="flex space-x-2 mt-3">
+              <a href="product5detail.html" class="w-full">
+                <button
+                  class="w-full py-2 bg-yellow-500 text-white font-semibold rounded-lg transition duration-300 hover:bg-yellow-600 text-sm"
+                >
+                  Product Details
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-white shadow-lg rounded-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl"
+        >
+          <img
+            src="womanproduct8.jpg"
+            alt="Cropped Boxy T-Shirt"
+            class="w-full h-80 object-cover"
+          />
+          <div class="p-4">
+            <h3 class="text-lg font-semibold">Cropped Boxy T-Shirt</h3>
+            <p class="text-gray-700 mt-1">PKR 1,490</p>
+            <div class="flex space-x-2 mt-3">
+              <a href="fproduct8detail.html" class="w-full">
+                <button
+                  class="w-full py-2 bg-yellow-500 text-white font-semibold rounded-lg transition duration-300 hover:bg-yellow-600 text-sm"
+                >
+                  Product Details
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-white shadow-lg rounded-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl"
+        >
+          <img
+            src="menhoodies3.jpg"
+            alt="Contrast Sleeves Hoodie"
+            class="w-full h-80 object-cover"
+          />
+          <div class="p-4">
+            <h3 class="text-lg font-semibold">Contrast Sleeves Hoodie</h3>
+            <p class="text-gray-700 mt-1">PKR 1,490</p>
+            <div class="flex space-x-2 mt-3">
+              <a href="menhoodies3.html" class="w-full">
+                <button
+                  class="w-full py-2 bg-yellow-500 text-white font-semibold rounded-lg transition duration-300 hover:bg-yellow-600 text-sm"
+                >
+                  Product Details
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-white shadow-lg rounded-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl"
+        >
+          <img
+            src="womenhoodies2.jpg"
+            alt="Oversized Cropped Hoodie"
+            class="w-full h-80 object-cover"
+          />
+          <div class="p-4">
+            <h3 class="text-lg font-semibold">
+              Oversized Cropped Hoodie With Drop Shoulders
+            </h3>
+            <p class="text-gray-700 mt-1">PKR 1,490</p>
+            <div class="flex space-x-2 mt-3">
+              <a href="womenhoodies2detail.html" class="w-full">
+                <button
+                  class="w-full py-2 bg-yellow-500 text-white font-semibold rounded-lg transition duration-300 hover:bg-yellow-600 text-sm"
+                >
+                  Product Details
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-white shadow-lg rounded-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl"
+        >
+          <img
+            src="menproduct2.jpg"
+            alt="Raglan Slogan T-Shirt"
+            class="w-full h-80 object-cover"
+          />
+          <div class="p-4">
+            <h3 class="text-lg font-semibold">Raglan Slogan T-Shirt</h3>
+            <p class="text-gray-700 mt-1">PKR 1,490</p>
+            <div class="flex space-x-2 mt-3">
+              <a href="product2detail.html" class="w-full">
+                <button
+                  class="w-full py-2 bg-yellow-500 text-white font-semibold rounded-lg transition duration-300 hover:bg-yellow-600 text-sm"
+                >
+                  Product Details
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-white shadow-lg rounded-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl"
+        >
+          <img
+            src="womenhoodies8.jpg"
+            alt="Basic Crew Neck Hoodie"
+            class="w-full h-80 object-cover"
+          />
+          <div class="p-4">
+            <h3 class="text-lg font-semibold">Basic Crew Neck Hoodie</h3>
+            <p class="text-gray-700 mt-1">PKR 1,490</p>
+            <div class="flex space-x-2 mt-3">
+              <a href="womenhoodies8detail.html" class="w-full">
+                <button
+                  class="w-full py-2 bg-yellow-500 text-white font-semibold rounded-lg transition duration-300 hover:bg-yellow-600 text-sm"
+                >
+                  Product Details
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-white shadow-lg rounded-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl"
+        >
+          <img
+            src="menproduct8.jpg"
+            alt="Basic Crew Neck T-Shirt"
+            class="w-full h-80 object-cover"
+          />
+          <div class="p-4">
+            <h3 class="text-lg font-semibold">Basic Crew Neck T-Shirt</h3>
+            <p class="text-gray-700 mt-1">PKR 1,490</p>
+            <div class="flex space-x-2 mt-3">
+              <a href="product8detail.html" class="w-full">
+                <button
+                  class="w-full py-2 bg-yellow-500 text-white font-semibold rounded-lg transition duration-300 hover:bg-yellow-600 text-sm"
+                >
+                  Product Details
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-white shadow-lg rounded-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl"
+        >
+          <img
+            src="menhoodie8.webp"
+            alt="Boxy Hoodie"
+            class="w-full h-80 object-cover"
+          />
+          <div class="p-4">
+            <h3 class="text-lg font-semibold">Boxy Hoodie</h3>
+            <p class="text-gray-700 mt-1">PKR 1,490</p>
+            <div class="flex space-x-2 mt-3">
+              <a href="menhoodies8detail.html" class="w-full">
+                <button
+                  class="w-full py-2 bg-yellow-500 text-white font-semibold rounded-lg transition duration-300 hover:bg-yellow-600 text-sm"
+                >
+                  Product Details
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-white shadow-lg rounded-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl"
+        >
+          <img
+            src="womenhoodies1.jpg"
+            alt="Hoodie With Woven Fabric"
+            class="w-full h-80 object-cover"
+          />
+          <div class="p-4">
+            <h3 class="text-lg font-semibold">Hoodie With Woven Fabric</h3>
+            <p class="text-gray-700 mt-1">PKR 1,490</p>
+            <div class="flex space-x-2 mt-3">
+              <a href="womenhoodies1detail.html" class="w-full">
+                <button
+                  class="w-full py-2 bg-yellow-500 text-white font-semibold rounded-lg transition duration-300 hover:bg-yellow-600 text-sm"
+                >
+                  Product Details
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-white shadow-lg rounded-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl"
+        >
+          <img
+            src="womanproduct7.jpg"
+            alt="Cropped Slim Tank Top"
+            class="w-full h-80 object-cover"
+          />
+          <div class="p-4">
+            <h3 class="text-lg font-semibold">Cropped Slim Tank Top</h3>
+            <p class="text-gray-700 mt-1">PKR 1,490</p>
+            <div class="flex space-x-2 mt-3">
+              <a href="fproduct7detail.html" class="w-full">
+                <button
+                  class="w-full py-2 bg-yellow-500 text-white font-semibold rounded-lg transition duration-300 hover:bg-yellow-600 text-sm"
+                >
+                  Product Details
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-white shadow-lg rounded-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl"
+        >
+          <img
+            src="menproduct1.jpg"
+            alt="Slogan T-Shirt"
+            class="w-full h-80 object-cover"
+          />
+          <div class="p-4">
+            <h3 class="text-lg font-semibold">Slogan T-Shirt</h3>
+            <p class="text-gray-700 mt-1">PKR 1,490</p>
+            <div class="flex space-x-2 mt-3">
+              <a href="product1detail.html" class="w-full">
+                <button
+                  class="w-full py-2 bg-yellow-500 text-white font-semibold rounded-lg transition duration-300 hover:bg-yellow-600 text-sm"
+                >
+                  Product Details
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-white shadow-lg rounded-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl"
+        >
+          <img
+            src="womenhoodies4.jpg"
+            alt="Oversized Zipper Hoodie"
+            class="w-full h-80 object-cover"
+          />
+          <div class="p-4">
+            <h3 class="text-lg font-semibold">Oversized Zipper Hoodie</h3>
+            <p class="text-gray-700 mt-1">PKR 1,490</p>
+            <div class="flex space-x-2 mt-3">
+              <a href="womenhoodies4detail.html" class="w-full">
+                <button
+                  class="w-full py-2 bg-yellow-500 text-white font-semibold rounded-lg transition duration-300 hover:bg-yellow-600 text-sm"
+                >
+                  Product Details
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-white shadow-lg rounded-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl"
+        >
+          <img
+            src="menproduct4.jpeg"
+            alt="Vintage Washed Graphic T-shirt"
+            class="w-full h-80 object-cover"
+          />
+          <div class="p-4">
+            <h3 class="text-lg font-semibold">
+              Vintage Washed Graphic T-shirt
+            </h3>
+            <p class="text-gray-700 mt-1">PKR 1,490</p>
+            <div class="flex space-x-2 mt-3">
+              <a href="product4detail.html" class="w-full">
+                <button
+                  class="w-full py-2 bg-yellow-500 text-white font-semibold rounded-lg transition duration-300 hover:bg-yellow-600 text-sm"
+                >
+                  Product Details
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-white shadow-lg rounded-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl"
+        >
+          <img
+            src="menhoodies6.jpg"
+            alt="Slogan Hoodie"
+            class="w-full h-80 object-cover"
+          />
+          <div class="p-4">
+            <h3 class="text-lg font-semibold">Slogan Hoodie</h3>
+            <p class="text-gray-700 mt-1">PKR 1,490</p>
+            <div class="flex space-x-2 mt-3">
+              <a href="menhoodies6detail.html" class="w-full">
+                <button
+                  class="w-full py-2 bg-yellow-500 text-white font-semibold rounded-lg transition duration-300 hover:bg-yellow-600 text-sm"
+                >
+                  Product Details
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-white shadow-lg rounded-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl"
+        >
+          <img
+            src="womanproduct2.jpg"
+            alt="Basic Textured Tank Top"
+            class="w-full h-80 object-cover"
+          />
+          <div class="p-4">
+            <h3 class="text-lg font-semibold">Basic Textured Tank Top</h3>
+            <p class="text-gray-700 mt-1">PKR 1,490</p>
+            <div class="flex space-x-2 mt-3">
+              <a href="fproduct2detail.html" class="w-full">
+                <button
+                  class="w-full py-2 bg-yellow-500 text-white font-semibold rounded-lg transition duration-300 hover:bg-yellow-600 text-sm"
+                >
+                  Product Details
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-white shadow-lg rounded-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl"
+        >
+          <img
+            src="menproduct7.jpg"
+            alt="Textured T-Shirt"
+            class="w-full h-80 object-cover"
+          />
+          <div class="p-4">
+            <h3 class="text-lg font-semibold">Textured T-Shirt</h3>
+            <p class="text-gray-700 mt-1">PKR 1,490</p>
+            <div class="flex space-x-2 mt-3">
+              <a href="product7detail.html" class="w-full">
+                <button
+                  class="w-full py-2 bg-yellow-500 text-white font-semibold rounded-lg transition duration-300 hover:bg-yellow-600 text-sm"
+                >
+                  Product Details
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-white shadow-lg rounded-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl"
+        >
+          <img
+            src="womenhoodies7.jpg"
+            alt="Cropped Slim Hoodie"
+            class="w-full h-80 object-cover"
+          />
+          <div class="p-4">
+            <h3 class="text-lg font-semibold">Cropped Slim Hoodie</h3>
+            <p class="text-gray-700 mt-1">PKR 1,490</p>
+            <div class="flex space-x-2 mt-3">
+              <a href="womenhoodies7detail.html" class="w-full">
+                <button
+                  class="w-full py-2 bg-yellow-500 text-white font-semibold rounded-lg transition duration-300 hover:bg-yellow-600 text-sm"
+                >
+                  Product Details
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-white shadow-lg rounded-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl"
+        >
+          <img
+            src="womanproduct5.jpg"
+            alt="Slogan T-Shirt"
+            class="w-full h-80 object-cover"
+          />
+          <div class="p-4">
+            <h3 class="text-lg font-semibold">Slogan T-Shirt</h3>
+            <p class="text-gray-700 mt-1">PKR 1,490</p>
+            <div class="flex space-x-2 mt-3">
+              <a href="fproduct5detail.html" class="w-full">
+                <button
+                  class="w-full py-2 bg-yellow-500 text-white font-semibold rounded-lg transition duration-300 hover:bg-yellow-600 text-sm"
+                >
+                  Product Details
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-white shadow-lg rounded-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl"
+        >
+          <img
+            src="menproduct3.jpg"
+            alt="Basic Knitted T-shirt"
+            class="w-full h-80 object-cover"
+          />
+          <div class="p-4">
+            <h3 class="text-lg font-semibold">Basic Knitted T-shirt</h3>
+            <p class="text-gray-700 mt-1">PKR 1,490</p>
+            <div class="flex space-x-2 mt-3">
+              <a href="product3detail.html" class="w-full">
+                <button
+                  class="w-full py-2 bg-yellow-500 text-white font-semibold rounded-lg transition duration-300 hover:bg-yellow-600 text-sm"
+                >
+                  Product Details
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-white shadow-lg rounded-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl"
+        >
+          <img
+            src="womenhoodies3.jpg"
+            alt="Slogan Zipper Hoodie"
+            class="w-full h-80 object-cover"
+          />
+          <div class="p-4">
+            <h3 class="text-lg font-semibold">Slogan Zipper Hoodie</h3>
+            <p class="text-gray-700 mt-1">PKR 1,490</p>
+            <div class="flex space-x-2 mt-3">
+              <a href="womenhoodies3detail.html" class="w-full">
+                <button
+                  class="w-full py-2 bg-yellow-500 text-white font-semibold rounded-lg transition duration-300 hover:bg-yellow-600 text-sm"
+                >
+                  Product Details
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-white shadow-lg rounded-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl"
+        >
+          <img
+            src="menhoodies2.jpg"
+            alt="Basic Hoodies"
+            class="w-full h-80 object-cover"
+          />
+          <div class="p-4">
+            <h3 class="text-lg font-semibold">Basic Hoodies</h3>
+            <p class="text-gray-700 mt-1">PKR 1,490</p>
+            <div class="flex space-x-2 mt-3">
+              <a href="menhoodies2.html" class="w-full">
+                <button
+                  class="w-full py-2 bg-yellow-500 text-white font-semibold rounded-lg transition duration-300 hover:bg-yellow-600 text-sm"
+                >
+                  Product Details
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-white shadow-lg rounded-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl"
+        >
+          <img
+            src="menhoodies5.jpg"
+            alt="Basic Hoodie"
+            class="w-full h-80 object-cover"
+          />
+          <div class="p-4">
+            <h3 class="text-lg font-semibold">Basic Hoodie</h3>
+            <p class="text-gray-700 mt-1">PKR 1,490</p>
+            <div class="flex space-x-2 mt-3">
+              <a href="menhoodies5.html" class="w-full">
+                <button
+                  class="w-full py-2 bg-yellow-500 text-white font-semibold rounded-lg transition duration-300 hover:bg-yellow-600 text-sm"
+                >
+                  Product Details
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-white shadow-lg rounded-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl"
+        >
+          <img
+            src="menproduct6.jpg"
+            alt="Basic Textured T-Shirt"
+            class="w-full h-80 object-cover"
+          />
+          <div class="p-4">
+            <h3 class="text-lg font-semibold">Basic Textured T-Shirt</h3>
+            <p class="text-gray-700 mt-1">PKR 1,490</p>
+            <div class="flex space-x-2 mt-3">
+              <a href="product6detail.html" class="w-full">
+                <button
+                  class="w-full py-2 bg-yellow-500 text-white font-semibold rounded-lg transition duration-300 hover:bg-yellow-600 text-sm"
+                >
+                  Product Details
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      const openMenu = document.getElementById("openMenu");
+      const closeMenu = document.getElementById("closeMenu");
+      const sideMenu = document.getElementById("sideMenu");
+      const searchIcon = document.getElementById("searchIcon");
+      const searchBar = document.getElementById("searchBar");
+      const mainContent = document.getElementById("mainContent");
+
+      // Side Menu functionality
+      openMenu.addEventListener("click", () => {
+        sideMenu.classList.remove("-translate-x-full");
+        sideMenu.classList.add("translate-x-0");
+        document.body.classList.add("overflow-hidden");
+      });
+
+      closeMenu.addEventListener("click", () => {
+        sideMenu.classList.add("-translate-x-full");
+        sideMenu.classList.remove("translate-x-0");
+        document.body.classList.remove("overflow-hidden");
+      });
+
+      // Search bar functionality
+      searchIcon.addEventListener("click", (event) => {
+        event.stopPropagation();
+        const isVisible = searchBar.classList.contains("scale-y-100");
+        if (isVisible) {
+          searchBar.classList.remove("scale-y-100", "opacity-100");
+          searchBar.classList.add("scale-y-0", "opacity-0");
+        } else {
+          searchBar.classList.remove("scale-y-0", "opacity-0");
+          searchBar.classList.add("scale-y-100", "opacity-100");
+        }
+      });
+
+      document.addEventListener("click", (event) => {
+        if (!searchBar.contains(event.target) && event.target !== searchIcon) {
+          searchBar.classList.remove("scale-y-100", "opacity-100");
+          searchBar.classList.add("scale-y-0", "opacity-0");
+        }
+      });
+    </script>
+  </body>
+</html>

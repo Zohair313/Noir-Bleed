@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NOIR BLEED</title>
+    <link rel="icon" type="image/x-icon" href="logo-removebg-preview.png" />
+    <link rel="stylesheet" href="dist/output.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Side menu */
+      .side-menu {
+        transition: transform 0.3s ease;
+      }
+
+      /* Fade-in elements */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+      }
+
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Slideshow layering */
+      #slideshow img {
+        z-index: 1;
+      }
+
+      #slideshow img.opacity-100 {
+        z-index: 2;
+      }
+
+      /* Custom Animations */
+      @keyframes fadeUp {
+        0% {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .animate-fadeUp {
+        animation: fadeUp 1s ease-out forwards;
+      }
+
+      .delay-200 {
+        animation-delay: 0.2s;
+      }
+
+      .delay-400 {
+        animation-delay: 0.4s;
+      }
+    </style>
+  </head>
+
+  <body class="bg-white text-gray-800 overflow-x-hidden">
+    <!-- Side Menu -->
+    <aside
+      id="sideMenu"
+      class="fixed top-0 left-0 h-full w-64 sm:w-80 bg-gray-900 text-white transform -translate-x-full side-menu z-50"
+    >
+      <div
+        class="p-4 sm:p-6 border-b border-gray-700 flex justify-between items-center"
+      >
+        <h2 class="text-lg font-bold">Products</h2>
+        <button id="closeMenu" class="text-2xl">&times;</button>
+      </div>
+      <nav class="p-4 sm:p-6 space-y-4">
+        <a
+          href="all2.html"
+          class="block hover:text-gray-400 text-sm sm:text-base"
+          >New Arrivals</a
+        >
+        <a
+          href="all5.html"
+          class="block hover:text-gray-400 text-sm sm:text-base"
+          >T-Shirts & Shirts</a
+        >
+        <a
+          href="all6.html"
+          class="block hover:text-gray-400 text-sm sm:text-base"
+          >UniSex Hoodies</a
+        >
+        <a
+          href="all4.html"
+          class="block hover:text-gray-400 text-sm sm:text-base"
+          >Modern Classic</a
+        >
+        <a
+          href="all3.html"
+          class="block hover:text-gray-400 text-sm sm:text-base"
+          >Trendy Deals</a
+        >
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <div
+      id="mainContent"
+      class="transition-transform duration-300 min-h-screen flex flex-col justify-between"
+    >
+      <header
+        class="absolute top-0 left-0 w-full flex items-center justify-between px-4 sm:px-6 py-3 sm:py-4 z-40"
+      >
+        <div class="flex items-center space-x-2">
+          <button id="openMenu" class="text-black text-xl sm:text-2xl">
+            &#9776;
+          </button>
+          <div class="flex items-center">
+            <h3 class="text-xl sm:text-2xl md:text-3xl font-bold text-black">
+              NOIR
+            </h3>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 sm:h-6 sm:w-6 md:h-8 md:w-8 text-yellow-500"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.5 6H19m-12 0a1 1 0 11-2 0 1 1 0 012 0zm12 0a1 1 0 11-2 0 1 1 0 012 0z"
+              />
+            </svg>
+            <h3 class="text-xl sm:text-2xl md:text-3xl font-bold text-black">
+              BLEED
+            </h3>
+          </div>
+        </div>
+        <div class="flex items-center space-x-3 sm:space-x-4 text-black">
+          <button id="searchIcon" class="transition transform hover:scale-125">
+            <svg
+              viewBox="0 0 24 24"
+              class="w-4 h-4 sm:w-5 sm:h-5"
+              stroke="black"
+              fill="none"
+              stroke-width="2"
+            >
+              <circle cx="11" cy="11" r="7"></circle>
+              <line x1="16.65" y1="16.65" x2="21" y2="21"></line>
+            </svg>
+          </button>
+
+          <!-- Search Bar -->
+          <div
+            id="searchBar"
+            class="fixed top-14 left-0 w-full flex justify-center px-4 opacity-0 scale-y-0 transform transition-all duration-300 origin-top z-50"
+          >
+            <input
+              type="text"
+              placeholder="Search here..."
+              class="w-full max-w-md px-4 py-2 rounded-md shadow-lg border border-gray-300 focus:ring-yellow-500 focus:border-yellow-500 text-sm sm:text-base"
+            />
+          </div>
+
+          <a href="login.html">
+            <svg
+              viewBox="0 0 24 24"
+              class="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6"
+              stroke="black"
+              fill="none"
+              stroke-width="2"
+            >
+              <circle cx="12" cy="8" r="4"></circle>
+              <path d="M4 20c0-4 4-6 8-6s8 2 8 6"></path>
+            </svg>
+          </a>
+
+          <a href="cart.html">
+            <svg
+              viewBox="0 0 24 24"
+              class="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6"
+              stroke="black"
+              fill="none"
+              stroke-width="2"
+            >
+              <path d="M6 8h12l1 12H5L6 8z"></path>
+              <path d="M9 8V6a3 3 0 0 1 6 0v2"></path>
+            </svg>
+          </a>
+        </div>
+      </header>
+
+      <!-- Slideshow Section -->
+      <section class="relative h-screen w-full overflow-hidden">
+        <div id="slideshow" class="absolute inset-0">
+          <img
+            src="pic1.jpg"
+            class="w-full h-full object-cover absolute opacity-100 transition-opacity duration-1000"
+            alt="Slide 1"
+          />
+          <img
+            src="pic2.jpg"
+            class="w-full h-full object-cover absolute opacity-0 transition-opacity duration-1000"
+            alt="Slide 2"
+          />
+          <img
+            src="pic3.jpg"
+            class="w-full h-full object-cover absolute opacity-0 transition-opacity duration-1000"
+            alt="Slide 3"
+          />
+          <img
+            src="pic4.jpg"
+            class="w-full h-full object-cover absolute opacity-0 transition-opacity duration-1000"
+            alt="Slide 4"
+          />
+          <img
+            src="pic5.jpg"
+            class="w-full h-full object-cover absolute opacity-0 transition-opacity duration-1000"
+            alt="Slide 5"
+          />
+          <img
+            src="pic6.jpg"
+            class="w-full h-full object-cover absolute opacity-0 transition-opacity duration-1000"
+            alt="Slide 6"
+          />
+        </div>
+
+        <!-- Slideshow Text Overlay -->
+        <div
+          class="absolute inset-0 z-10 flex items-center justify-center text-black px-4 sm:px-6"
+        >
+          <div
+            class="flex flex-col md:flex-row justify-between items-center w-full max-w-6xl space-y-4 md:space-y-0 px-2"
+          >
+            <span
+              class="text-xs sm:text-sm md:text-base lg:text-lg font-bold tracking-[0.1em] sm:tracking-[0.2em] md:tracking-[0.3em] text-center md:text-left animate-fadeUp"
+              >NEW ARRIVALS</span
+            >
+            <h1
+              class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-wider sm:tracking-widest text-center whitespace-nowrap animate-fadeUp delay-200"
+            >
+              RESORT EDITION
+            </h1>
+            <span
+              class="text-xs sm:text-sm md:text-base lg:text-lg font-bold tracking-[0.1em] sm:tracking-[0.2em] md:tracking-[0.3em] text-center md:text-right animate-fadeUp delay-400"
+              >SUMMER 2025</span
+            >
+          </div>
+        </div>
+
+        <!-- Navigation Links -->
+        <div
+          class="absolute bottom-4 md:bottom-8 lg:bottom-10 w-full flex justify-center z-10 px-2"
+        >
+          <nav
+            class="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4 lg:gap-6 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-semibold tracking-wide sm:tracking-wider text-[#d4af37]"
+          >
+            <a
+              href="men-responsive.html"
+              class="hover:underline text-black px-1 sm:px-2 py-1 text-center"
+              >Men's T-Shirts</a
+            >
+            <a
+              href="female.html"
+              class="hover:underline text-black px-1 sm:px-2 py-1 text-center"
+              >Women's T-shirts</a
+            >
+            <a
+              href="menhoodies.html"
+              class="hover:underline text-black px-1 sm:px-2 py-1 text-center"
+              >Men's Hoodies</a
+            >
+            <a
+              href="womenhoodies.html"
+              class="hover:underline text-black px-1 sm:px-2 py-1 text-center"
+              >Women's Hoodies</a
+            >
+          </nav>
+        </div>
+      </section>
+
+      <!-- Newsletter Section -->
+      <section
+        class="flex flex-col items-center text-center py-16 md:py-24 lg:py-32 fade-in px-4"
+      >
+        <h2
+          class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light mb-4 sm:mb-6 px-2"
+        >
+          Get the latest trends first
+        </h2>
+        <form
+          action="recordpage.html"
+          method="get"
+          class="w-full max-w-md relative mb-4 sm:mb-6 px-2"
+        >
+          <input
+            type="email"
+            name="email"
+            placeholder="Enter your email"
+            class="w-full p-3 pr-12 text-center border-b-2 border-gray-400 focus:outline-none focus:border-black text-sm sm:text-base"
+            required
+          />
+          <button
+            type="submit"
+            class="absolute right-3 top-1/2 transform -translate-y-1/2 text-black font-bold"
+          >
+            >
+          </button>
+        </form>
+
+        <!-- Social Media Links -->
+        <div
+          class="flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-6 text-xs sm:text-sm md:text-base lg:text-lg px-2"
+        >
+          <a href="https://www.instagram.com/" class="hover:underline"
+            >Instagram</a
+          >
+          <a href="https://www.facebook.com/" class="hover:underline"
+            >Facebook</a
+          >
+          <a href="https://x.com/" class="hover:underline">Twitter</a>
+          <a href="https://www.pinterest.com/" class="hover:underline"
+            >Pinterest</a
+          >
+        </div>
+      </section>
+
+      <!-- Footer Section -->
+      <footer class="bg-black text-white py-6 sm:py-8 px-4 sm:px-6 md:px-8">
+        <div
+          class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 text-xs sm:text-sm"
+        >
+          <div>
+            <h4 class="font-semibold mb-2 sm:mb-3 text-sm sm:text-base">
+              CUSTOMER SERVICE
+            </h4>
+            <ul class="space-y-1 sm:space-y-2">
+              <li><a href="faq.html" class="hover:underline">FAQ's</a></li>
+              <li>
+                <a href="faq.html" class="hover:underline">Log In/Sign Up</a>
+              </li>
+              <li><a href="faq.html" class="hover:underline">How to Buy</a></li>
+              <li><a href="faq.html" class="hover:underline">Payment</a></li>
+              <li>
+                <a href="faq.html" class="hover:underline"
+                  >Shipping & Deliveries</a
+                >
+              </li>
+              <li>
+                <a href="faq.html" class="hover:underline"
+                  >Exchange & Returns</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="flex flex-col items-center justify-center space-y-2 sm:space-y-3"
+          >
+            <div class="flex items-center space-x-2">
+              <h3 class="text-xl sm:text-2xl md:text-3xl font-bold">NOIR</h3>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5 sm:h-6 sm:w-6 md:h-8 md:w-8 text-yellow-500"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.5 6H19m-12 0a1 1 0 11-2 0 1 1 0 012 0zm12 0a1 1 0 11-2 0 1 1 0 012 0z"
+                />
+              </svg>
+              <h3 class="text-xl sm:text-2xl md:text-3xl font-bold">BLEED</h3>
+            </div>
+            <p class="text-xs text-gray-400 text-center">
+              Premium Fashion & Lifestyle
+            </p>
+          </div>
+
+          <div class="text-left md:text-right">
+            <h4 class="font-semibold mb-2 sm:mb-3 text-sm sm:text-base">
+              COMPANY
+            </h4>
+            <ul class="space-y-1 sm:space-y-2">
+              <li><a href="faq.html" class="hover:underline">About Us</a></li>
+              <li><a href="faq.html" class="hover:underline">Contact</a></li>
+              <li><a href="faq.html" class="hover:underline">Affiliate</a></li>
+              <li><a href="faq.html" class="hover:underline">Press</a></li>
+              <li><a href="faq.html" class="hover:underline">Sitemap</a></li>
+              <li>
+                <a href="faq.html" class="hover:underline">Privacy Policy</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <p class="text-center text-xs text-gray-400 mt-6 sm:mt-8">
+          &copy; 2025 NOIR BLEED. All rights reserved.
+        </p>
+      </footer>
+
+      <script>
+        // Side menu toggle
+        const openMenuBtn = document.getElementById("openMenu");
+        const closeMenuBtn = document.getElementById("closeMenu");
+        const sideMenu = document.getElementById("sideMenu");
+        const mainContent = document.getElementById("mainContent");
+
+        openMenuBtn.addEventListener("click", () => {
+          sideMenu.classList.remove("-translate-x-full");
+          mainContent.classList.add("translate-x-64");
+        });
+
+        closeMenuBtn.addEventListener("click", () => {
+          sideMenu.classList.add("-translate-x-full");
+          mainContent.classList.remove("translate-x-64");
+        });
+
+        // Slideshow
+        const slides = document.querySelectorAll("#slideshow img");
+        let currentSlide = 0;
+        setInterval(() => {
+          slides[currentSlide].classList.remove("opacity-100");
+          slides[currentSlide].classList.add("opacity-0");
+          currentSlide = (currentSlide + 1) % slides.length;
+          slides[currentSlide].classList.remove("opacity-0");
+          slides[currentSlide].classList.add("opacity-100");
+        }, 3000);
+
+        // Fade-in elements
+        const faders = document.querySelectorAll(".fade-in");
+        const appearOptions = {
+          threshold: 0,
+          rootMargin: "0px 0px -50px 0px",
+        };
+
+        const appearOnScroll = new IntersectionObserver(
+          (entries, appearOnScroll) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) return;
+              entry.target.classList.add("visible");
+              appearOnScroll.unobserve(entry.target);
+            });
+          },
+          appearOptions
+        );
+
+        faders.forEach((fader) => {
+          appearOnScroll.observe(fader);
+        });
+
+        // Search Bar Toggle
+        const searchIcon = document.getElementById("searchIcon");
+        const searchBar = document.getElementById("searchBar");
+        const searchInput = searchBar.querySelector("input");
+        let isVisible = false;
+
+        searchIcon.addEventListener("click", () => {
+          if (!isVisible) {
+            searchBar.classList.remove("opacity-0", "scale-y-0");
+            searchBar.classList.add("opacity-100", "scale-y-100");
+            searchInput.focus();
+            isVisible = true;
+          } else {
+            searchBar.classList.remove("opacity-100", "scale-y-100");
+            searchBar.classList.add("opacity-0", "scale-y-0");
+            isVisible = false;
+          }
+        });
+      </script>
+    </div>
+  </body>
+</html>

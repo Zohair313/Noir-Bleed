@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order Confirmed</title>
+    <link rel="icon" type="image/x-icon" href="logo-removebg-preview.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-50 flex items-center justify-center min-h-screen">
+    <div class="bg-white shadow-2xl rounded-2xl p-10 max-w-lg text-center">
+      <!-- Success Icon -->
+      <div class="flex items-center justify-center mb-6">
+        <svg
+          class="w-20 h-20 text-green-500"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M9 12l2 2l4-4m6 2a9 9 0 11-18 0a9 9 0 0118 0z"
+          />
+        </svg>
+      </div>
+
+      <!-- Title -->
+      <h1 class="text-3xl font-bold text-gray-900 mb-4">Thank You! 🎉</h1>
+      <p class="text-gray-600 mb-6">
+        Your order has been placed successfully. We’ve sent a confirmation email
+        with your order details.
+      </p>
+
+      <!-- Order Info -->
+      <div class="bg-gray-100 p-4 rounded-lg mb-6 text-left">
+        <p class="flex justify-between mb-2">
+          <span class="font-medium">Order Number:</span>
+          <span>#12345</span>
+        </p>
+        <p class="flex justify-between mb-2">
+          <span class="font-medium">Total:</span>
+          <span>$65.00</span>
+        </p>
+        <p class="flex justify-between">
+          <span class="font-medium">Estimated Delivery:</span>
+          <span>3–5 business days</span>
+        </p>
+      </div>
+
+      <!-- Buttons -->
+      <div class="flex flex-col gap-3">
+        <a
+          href="index.html"
+          class="w-full bg-black text-white py-3 rounded-lg font-semibold hover:bg-gray-800 transition"
+        >
+          Continue Shopping
+        </a>
+        <a
+          href="cart.html"
+          class="w-full bg-gray-200 text-gray-900 py-3 rounded-lg font-semibold hover:bg-gray-300 transition"
+        >
+          View My Cart
+        </a>
+      </div>
+    </div>
+  </body>
+</html>

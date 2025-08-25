@@ -1,0 +1,11 @@
+{
+  "css.validate": false,
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "tailwindCSS.includeLanguages": {
+    "css": "css",
+    "plaintext": "css"
+  },
+  "liveServer.settings.port": 5502
+}
