@@ -1,4 +1,4 @@
-﻿# Tailwind CSS Setup
+# Noir-Bleed - Tailwind CSS Setup
 
 This project has been successfully configured with Tailwind CSS.
 
