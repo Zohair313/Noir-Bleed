@@ -1,4 +1,4 @@
-# Tailwind CSS Setup
+﻿# Tailwind CSS Setup
 
 This project has been successfully configured with Tailwind CSS.
 
@@ -23,11 +23,11 @@ This project has been successfully configured with Tailwind CSS.
 
 ## Example Classes
 
-- Layout: `flex`, `grid`, `container`, `mx-auto`
-- Spacing: `p-4`, `m-2`, `space-y-4`
-- Colors: `bg-blue-500`, `text-gray-800`, `border-gray-300`
-- Typography: `text-xl`, `font-bold`, `text-center`
-- Responsive: `md:grid-cols-3`, `sm:text-sm`
+- Layout: `flex` `grid` `container` `mx-auto`
+- Spacing: `p-4` `m-2` `space-y-4`
+- Colors: `bg-blue-500` `text-gray-800` `border-gray-300`
+- Typography: `text-xl` `font-bold` `text-center`
+- Responsive: `md:grid-cols-3` `sm:text-sm`
 
 ## Development
 
