@@ -387,6 +387,19 @@
         ".grid.grid-cols-1.sm\\:grid-cols-2.lg\\:grid-cols-3.xl\\:grid-cols-4.gap-6"
       );
       productsGrid.innerHTML = products.map(createProductCard).join("");
+
+      // 🔎 Hide search bar on ENTER
+      searchInput.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+          e.preventDefault();
+          searchBar.classList.remove("opacity-100", "scale-y-100");
+          searchBar.classList.add("opacity-0", "scale-y-0");
+          isVisible = false;
+          searchInput.value = "";
+
+          window.location.href = "all1.html";
+        }
+      });
     </script>
   </body>
 </html>

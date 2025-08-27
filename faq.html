@@ -649,12 +649,15 @@
           target.classList.remove("hidden");
           setTimeout(() => target.classList.add("show"), 10);
         }
+
         const sideMenu = document.getElementById("sideMenu");
         const openMenu = document.getElementById("openMenu");
         const closeMenu = document.getElementById("closeMenu");
+
         openMenu.addEventListener("click", () => {
           sideMenu.classList.remove("-translate-x-full");
         });
+
         closeMenu.addEventListener("click", () => {
           sideMenu.classList.add("-translate-x-full");
         });
@@ -678,14 +681,25 @@
           }
         });
 
-        // 🔎 Hide search bar on ENTER
+        // 🔎 Hide search bar on ENTER + Redirect
         searchInput.addEventListener("keydown", (e) => {
           if (e.key === "Enter") {
             e.preventDefault();
+
             searchBar.classList.remove("opacity-100", "scale-y-100");
             searchBar.classList.add("opacity-0", "scale-y-0");
             isVisible = false;
+
+            const query = searchInput.value.trim();
             searchInput.value = "";
+
+            // ✅ Redirect to all1.html (with search query optional)
+            if (query !== "") {
+              window.location.href =
+                "all1.html?search=" + encodeURIComponent(query);
+            } else {
+              window.location.href = "all1.html";
+            }
           }
         });
       </script>

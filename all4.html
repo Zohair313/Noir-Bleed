@@ -841,6 +841,18 @@
           searchBar.classList.add("scale-y-0", "opacity-0");
         }
       });
+      // 🔎 Hide search bar on ENTER
+      searchInput.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+          e.preventDefault();
+          searchBar.classList.remove("opacity-100", "scale-y-100");
+          searchBar.classList.add("opacity-0", "scale-y-0");
+          isVisible = false;
+          searchInput.value = "";
+
+          window.location.href = "all1.html";
+        }
+      });
     </script>
   </body>
 </html>

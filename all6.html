@@ -198,195 +198,231 @@
     </footer>
 
     <script>
-      const openMenu = document.getElementById("openMenu");
-      const closeMenu = document.getElementById("closeMenu");
-      const sideMenu = document.getElementById("sideMenu");
-      const searchIcon = document.getElementById("searchIcon");
-      const searchBar = document.getElementById("searchBar");
-      const mainContent = document.getElementById("mainContent");
+            const openMenu = document.getElementById("openMenu");
+            const closeMenu = document.getElementById("closeMenu");
+            const sideMenu = document.getElementById("sideMenu");
+            const searchIcon = document.getElementById("searchIcon");
+            const searchBar = document.getElementById("searchBar");
+            const mainContent = document.getElementById("mainContent");
 
-      // Side Menu functionality
-      openMenu.addEventListener("click", () => {
-        sideMenu.classList.remove("-translate-x-full");
-        sideMenu.classList.add("translate-x-0");
-        document.body.classList.add("overflow-hidden");
-      });
+            // Side Menu functionality
+            openMenu.addEventListener("click", () => {
+              sideMenu.classList.remove("-translate-x-full");
+              sideMenu.classList.add("translate-x-0");
+              document.body.classList.add("overflow-hidden");
+            });
 
-      closeMenu.addEventListener("click", () => {
-        sideMenu.classList.add("-translate-x-full");
-        sideMenu.classList.remove("translate-x-0");
-        document.body.classList.remove("overflow-hidden");
-      });
+            closeMenu.addEventListener("click", () => {
+              sideMenu.classList.add("-translate-x-full");
+              sideMenu.classList.remove("translate-x-0");
+              document.body.classList.remove("overflow-hidden");
+            });
 
-      // Search bar functionality
-      searchIcon.addEventListener("click", (event) => {
-        event.stopPropagation();
-        const isVisible = searchBar.classList.contains("scale-y-100");
-        if (isVisible) {
-          searchBar.classList.remove("scale-y-100", "opacity-100");
-          searchBar.classList.add("scale-y-0", "opacity-0");
-        } else {
-          searchBar.classList.remove("scale-y-0", "opacity-0");
-          searchBar.classList.add("scale-y-100", "opacity-100");
-        }
-      });
+            // Search bar functionality
+            searchIcon.addEventListener("click", (event) => {
+              event.stopPropagation();
+              const isVisible = searchBar.classList.contains("scale-y-100");
+              if (isVisible) {
+                searchBar.classList.remove("scale-y-100", "opacity-100");
+                searchBar.classList.add("scale-y-0", "opacity-0");
+              } else {
+                searchBar.classList.remove("scale-y-0", "opacity-0");
+                searchBar.classList.add("scale-y-100", "opacity-100");
+              }
+            });
 
-      document.addEventListener("click", (event) => {
-        if (!searchBar.contains(event.target) && event.target !== searchIcon) {
-          searchBar.classList.remove("scale-y-100", "opacity-100");
-          searchBar.classList.add("scale-y-0", "opacity-0");
-        }
-      });
+            document.addEventListener("click", (event) => {
+              if (!searchBar.contains(event.target) && event.target !== searchIcon) {
+                searchBar.classList.remove("scale-y-100", "opacity-100");
+                searchBar.classList.add("scale-y-0", "opacity-0");
+              }
+            });
 
-      // Combined and structured product data
-      const products = [
-        {
-          img: "menhoodies1.jpg",
-          alt: "Arcade Graphic Contrast Hoodie",
-          title: "Arcade Graphic Contrast Hoodie",
-          price: "PKR 1,490",
-          link: "menhoodies1detail.html",
-        },
-        {
-          img: "menhoodies2.jpg",
-          alt: "Basic Hoodies",
-          title: "Basic Hoodies",
-          price: "PKR 1,490",
-          link: "menhoodies2.html",
-        },
-        {
-          img: "menhoodies3.jpg",
-          alt: "Contrast Sleeves Hoodie",
-          title: "Contrast Sleeves Hoodie",
-          price: "PKR 1,490",
-          link: "menhoodies3.html",
-        },
-        {
-          img: "menhoodies4.jpg",
-          alt: "Basic Sleeveless Hoodie",
-          title: "Basic Sleeveless Hoodie",
-          price: "PKR 1,490",
-          link: "menhoodies4.html",
-        },
-        {
-          img: "menhoodies5.jpg",
-          alt: "Basic Hoodie",
-          title: "Basic Hoodie",
-          price: "PKR 1,490",
-          link: "menhoodies5.html",
-        },
-        {
-          img: "menhoodies6.jpg",
-          alt: "Slogan Hoodie",
-          title: "Slogan Hoodie",
-          price: "PKR 1,490",
-          link: "menhoodies6detail.html",
-        },
-        {
-          img: "menhoodies7.jpg",
-          alt: "Cropped Slim Hoodie",
-          title: "Cropped Slim Hoodie",
-          price: "PKR 1,490",
-          link: "menhoodies7detail.html",
-        },
-        {
-          img: "menhoodie8.webp",
-          alt: "Boxy Hoodie",
-          title: "Boxy Hoodie",
-          price: "PKR 1,490",
-          link: "menhoodies8detail.html",
-        },
-        {
-          img: "womenhoodies1.jpg",
-          alt: "Hoodie With Woven Fabric",
-          title: "Hoodie With Woven Fabric",
-          price: "PKR 1,490",
-          link: "womenhoodies1detail.html",
-        },
-        {
-          img: "womenhoodies2.jpg",
-          alt: "Oversized Cropped Hoodie With Drop Shoulders",
-          title: "Oversized Cropped Hoodie With Drop Shoulders",
-          price: "PKR 1,490",
-          link: "womenhoodies2detail.html",
-        },
-        {
-          img: "womenhoodies3.jpg",
-          alt: "Slogan Zipper Hoodie",
-          title: "Slogan Zipper Hoodie",
-          price: "PKR 1,490",
-          link: "womenhoodies3detail.html",
-        },
-        {
-          img: "womenhoodies4.jpg",
-          alt: "Oversized Zipper Hoodie",
-          title: "Oversized Zipper Hoodie",
-          price: "PKR 1,490",
-          link: "womenhoodies4detail.html",
-        },
-        {
-          img: "womenhoodies5.jpg",
-          alt: "Basic Mock Neck Hoodie",
-          title: "Basic Mock Neck Hoodie",
-          price: "PKR 1,490",
-          link: "womenhoodies5detail.html",
-        },
-        {
-          img: "womenhoodies6.jpg",
-          alt: "Blended Hoodie",
-          title: "Blended Hoodie",
-          price: "PKR 1,490",
-          link: "womenhoodies6detail.html",
-        },
-        {
-          img: "womenhoodies7.jpg",
-          alt: "Cropped Slim Hoodie",
-          title: "Cropped Slim Hoodie",
-          price: "PKR 1,490",
-          link: "womenhoodies7detail.html",
-        },
-        {
-          img: "womenhoodies8.jpg",
-          alt: "Basic Crew Neck Hoodie",
-          title: "Basic Crew Neck Hoodie",
-          price: "PKR 1,490",
-          link: "womenhoodies8detail.html",
-        },
-      ];
+            // Combined and structured product data
+            const products = [
+              {
+                img: "menhoodies1.jpg",
+                alt: "Arcade Graphic Contrast Hoodie",
+                title: "Arcade Graphic Contrast Hoodie",
+                price: "PKR 1,490",
+                link: "menhoodies1detail.html",
+              },
+              {
+                img: "menhoodies2.jpg",
+                alt: "Basic Hoodies",
+                title: "Basic Hoodies",
+                price: "PKR 1,490",
+                link: "menhoodies2.html",
+              },
+              {
+                img: "menhoodies3.jpg",
+                alt: "Contrast Sleeves Hoodie",
+                title: "Contrast Sleeves Hoodie",
+                price: "PKR 1,490",
+                link: "menhoodies3.html",
+              },
+              {
+                img: "menhoodies4.jpg",
+                alt: "Basic Sleeveless Hoodie",
+                title: "Basic Sleeveless Hoodie",
+                price: "PKR 1,490",
+                link: "menhoodies4.html",
+              },
+              {
+                img: "menhoodies5.jpg",
+                alt: "Basic Hoodie",
+                title: "Basic Hoodie",
+                price: "PKR 1,490",
+                link: "menhoodies5.html",
+              },
+              {
+                img: "menhoodies6.jpg",
+                alt: "Slogan Hoodie",
+                title: "Slogan Hoodie",
+                price: "PKR 1,490",
+                link: "menhoodies6detail.html",
+              },
+              {
+                img: "menhoodies7.jpg",
+                alt: "Cropped Slim Hoodie",
+                title: "Cropped Slim Hoodie",
+                price: "PKR 1,490",
+                link: "menhoodies7detail.html",
+              },
+              {
+                img: "menhoodie8.webp",
+                alt: "Boxy Hoodie",
+                title: "Boxy Hoodie",
+                price: "PKR 1,490",
+                link: "menhoodies8detail.html",
+              },
+              {
+                img: "womenhoodies1.jpg",
+                alt: "Hoodie With Woven Fabric",
+                title: "Hoodie With Woven Fabric",
+                price: "PKR 1,490",
+                link: "womenhoodies1detail.html",
+              },
+              {
+                img: "womenhoodies2.jpg",
+                alt: "Oversized Cropped Hoodie With Drop Shoulders",
+                title: "Oversized Cropped Hoodie With Drop Shoulders",
+                price: "PKR 1,490",
+                link: "womenhoodies2detail.html",
+              },
+              {
+                img: "womenhoodies3.jpg",
+                alt: "Slogan Zipper Hoodie",
+                title: "Slogan Zipper Hoodie",
+                price: "PKR 1,490",
+                link: "womenhoodies3detail.html",
+              },
+              {
+                img: "womenhoodies4.jpg",
+                alt: "Oversized Zipper Hoodie",
+                title: "Oversized Zipper Hoodie",
+                price: "PKR 1,490",
+                link: "womenhoodies4detail.html",
+              },
+              {
+                img: "womenhoodies5.jpg",
+                alt: "Basic Mock Neck Hoodie",
+                title: "Basic Mock Neck Hoodie",
+                price: "PKR 1,490",
+                link: "womenhoodies5detail.html",
+              },
+              {
+                img: "womenhoodies6.jpg",
+                alt: "Blended Hoodie",
+                title: "Blended Hoodie",
+                price: "PKR 1,490",
+                link: "womenhoodies6detail.html",
+              },
+              {
+                img: "womenhoodies7.jpg",
+                alt: "Cropped Slim Hoodie",
+                title: "Cropped Slim Hoodie",
+                price: "PKR 1,490",
+                link: "womenhoodies7detail.html",
+              },
+              {
+                img: "womenhoodies8.jpg",
+                alt: "Basic Crew Neck Hoodie",
+                title: "Basic Crew Neck Hoodie",
+                price: "PKR 1,490",
+                link: "womenhoodies8detail.html",
+              },
+            ];
 
-      // Shuffle the products array using the Fisher-Yates (Knuth) shuffle algorithm
-      function shuffleArray(array) {
-        for (let i = array.length - 1; i > 0; i--) {
-          const j = Math.floor(Math.random() * (i + 1));
-          [array[i], array[j]] = [array[j], array[i]];
-        }
-      }
+            // Shuffle the products array using the Fisher-Yates (Knuth) shuffle algorithm
+            function shuffleArray(array) {
+              for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+              }
+            }
 
-      shuffleArray(products);
+            shuffleArray(products);
 
-      // Function to generate the HTML for a single product card
-      function createProductCard(product) {
-        return `
-            <div class="bg-white shadow-lg rounded-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl">
-                <img src="${product.img}" alt="${product.alt}" class="w-full h-80 object-cover" />
-                <div class="p-4">
+            // Function to generate the HTML for a single product card
+            function createProductCard(product) {
+              return `
+                <div class="bg-white shadow-lg rounded-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+                  <img src="${product.img}" alt="${product.alt}" class="w-full h-80 object-cover" />
+                  <div class="p-4">
                     <h3 class="text-lg font-semibold">${product.title}</h3>
                     <p class="text-gray-700 mt-1">${product.price}</p>
                     <a href="${product.link}">
-                        <button class="w-full mt-3 py-2 bg-yellow-500 text-white font-semibold rounded-lg transition duration-300 hover:bg-yellow-600 text-sm">
-                            Product Details
-                        </button>
+                      <button class="w-full mt-3 py-2 bg-yellow-500 text-white font-semibold rounded-lg transition duration-300 hover:bg-yellow-600 text-sm">
+                        Product Details
+                      </button>
                     </a>
+                  </div>
                 </div>
-            </div>
-        `;
-      }
+              `;
+            }
 
-      // Insert shuffled products into the DOM
-      const productsGrid = document.querySelector(
-        ".grid.grid-cols-1.sm\\:grid-cols-2.lg\\:grid-cols-3.xl\\:grid-cols-4.gap-6"
-      );
-      productsGrid.innerHTML = products.map(createProductCard).join("");
-    </script>
+            // Insert shuffled products into the DOM
+            const productsGrid = document.querySelector(
+              ".grid.grid-cols-1.sm\\:grid-cols-2.lg\\:grid-cols-3.xl\\:grid-cols-4.gap-6"
+            );
+            productsGrid.innerHTML = products.map(createProductCard).join("");
+
+            // 🔍 Search Bar Setup
+            const searchInput = searchBar.querySelector("input");
+            let isVisible = false;
+
+            // Toggle search bar on click
+            searchIcon.addEventListener("click", () => {
+              if (!isVisible) {
+                searchBar.classList.remove("opacity-0", "scale-y-0");
+                searchBar.classList.add("opacity-100", "scale-y-100");
+                searchInput.focus();
+                isVisible = true;
+              } else {
+                searchBar.classList.remove("opacity-100", "scale-y-100");
+                searchBar.classList.add("opacity-0", "scale-y-0");
+                isVisible = false;
+              }
+            });
+
+            // 🔎 Hide search bar on ENTER + Redirect
+            searchInput.addEventListener("keydown", (e) => {
+              if (e.key === "Enter") {
+                e.preventDefault();
+
+                // hide bar
+                searchBar.classList.remove("opacity-100", "scale-y-100");
+                searchBar.classList.add("opacity-0", "scale-y-0");
+                isVisible = false;
+
+                // clear input
+                searchInput.value = "";
+
+                // redirect
+                window.location.href = "all1.html";
+              }
+            });
+        </script>
   </body>
 </html>

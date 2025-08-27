@@ -192,21 +192,29 @@
         <button id="closeMenu" class="text-2xl">&times;</button>
       </div>
       <nav class="p-4 sm:p-6 space-y-4">
-        <a href="#" class="block hover:text-gray-400 text-sm sm:text-base"
+        <a
+          href="all2.html"
+          class="block hover:text-gray-400 text-sm sm:text-base"
           >New Arrivals</a
         >
         <a
-          href="men-responsive.html"
+          href="all5.html"
           class="block hover:text-gray-400 text-sm sm:text-base"
           >T-Shirts & Shirts</a
         >
-        <a href="#" class="block hover:text-gray-400 text-sm sm:text-base"
+        <a
+          href="all6.html"
+          class="block hover:text-gray-400 text-sm sm:text-base"
           >UniSex Hoodies</a
         >
-        <a href="#" class="block hover:text-gray-400 text-sm sm:text-base"
+        <a
+          href="all4.html"
+          class="block hover:text-gray-400 text-sm sm:text-base"
           >Modern Classic</a
         >
-        <a href="#" class="block hover:text-gray-400 text-sm sm:text-base"
+        <a
+          href="all3.html"
+          class="block hover:text-gray-400 text-sm sm:text-base"
           >Trendy Deals</a
         >
       </nav>
@@ -429,17 +437,17 @@
 
         if (cartItems.length === 0) {
           cartItemsContainer.innerHTML = `
-                    <div class="empty-cart text-center py-16">
-                        <svg class="mx-auto h-16 w-16 text-gray-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.5 6H19m-12 0a1 1 0 11-2 0 1 1 0 012 0zm12 0a1 1 0 11-2 0 1 1 0 012 0z"/>
-                        </svg>
-                        <h3 class="text-lg font-medium text-gray-900 mb-2">Your cart is empty</h3>
-                        <p class="text-gray-500 mb-6">Start shopping to add items to your cart</p>
-                        <a href="index.html" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-black hover:bg-gray-800">
-                            Start Shopping
-                        </a>
-                    </div>
-                `;
+                          <div class="empty-cart text-center py-16">
+                              <svg class="mx-auto h-16 w-16 text-gray-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.5 6H19m-12 0a1 1 0 11-2 0 1 1 0 012 0zm12 0a1 1 0 11-2 0 1 1 0 012 0z"/>
+                              </svg>
+                              <h3 class="text-lg font-medium text-gray-900 mb-2">Your cart is empty</h3>
+                              <p class="text-gray-500 mb-6">Start shopping to add items to your cart</p>
+                              <a href="index.html" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-black hover:bg-gray-800">
+                                  Start Shopping
+                              </a>
+                          </div>
+                      `;
 
           // Reset order summary
           document.getElementById("subtotal").textContent = "$0.00";
@@ -456,47 +464,47 @@
             const totalPrice = usdPrice * item.quantity;
 
             return `
-                <div class="cart-item bg-white rounded-lg shadow-md p-6 flex items-center space-x-6">
-                    <img src="${item.image}" alt="${
+                      <div class="cart-item bg-white rounded-lg shadow-md p-6 flex items-center space-x-6">
+                          <img src="${item.image}" alt="${
               item.name
             }" class="w-20 h-20 object-cover rounded">
-                    
-                    <div class="flex-1">
-                        <h3 class="text-lg font-semibold text-gray-900">${
-                          item.name
-                        }</h3>
-                        <p class="text-gray-600">${item.color} • ${
+
+                          <div class="flex-1">
+                              <h3 class="text-lg font-semibold text-gray-900">${
+                                item.name
+                              }</h3>
+                              <p class="text-gray-600">${item.color} • ${
               item.size
             }</p>
-                        <p class="text-lg font-bold text-gray-900">${cartUtils.formatUsdPrice(
-                          usdPrice
-                        )}</p>
-                    </div>
-                    
-                    <div class="flex items-center space-x-3">
-                        <button class="quantity-btn w-8 h-8 border border-gray-300 rounded flex items-center justify-center" onclick="updateQuantity('${
-                          item.cartId
-                        }', ${item.quantity - 1})">-</button>
-                        <span class="w-12 text-center font-medium">${
-                          item.quantity
-                        }</span>
-                        <button class="quantity-btn w-8 h-8 border border-gray-300 rounded flex items-center justify-center" onclick="updateQuantity('${
-                          item.cartId
-                        }', ${item.quantity + 1})">+</button>
-                    </div>
-                    
-                    <div class="text-right">
-                        <p class="text-xl font-bold text-gray-900">${cartUtils.formatUsdPrice(
-                          totalPrice
-                        )}</p>
-                        <button class="text-red-600 hover:text-red-800 text-sm mt-2" onclick="removeItem('${
-                          item.cartId
-                        }')">
-                            Remove
-                        </button>
-                    </div>
-                </div>
-                `;
+                              <p class="text-lg font-bold text-gray-900">${cartUtils.formatUsdPrice(
+                                usdPrice
+                              )}</p>
+                          </div>
+
+                          <div class="flex items-center space-x-3">
+                              <button class="quantity-btn w-8 h-8 border border-gray-300 rounded flex items-center justify-center" onclick="updateQuantity('${
+                                item.cartId
+                              }', ${item.quantity - 1})">-</button>
+                              <span class="w-12 text-center font-medium">${
+                                item.quantity
+                              }</span>
+                              <button class="quantity-btn w-8 h-8 border border-gray-300 rounded flex items-center justify-center" onclick="updateQuantity('${
+                                item.cartId
+                              }', ${item.quantity + 1})">+</button>
+                          </div>
+
+                          <div class="text-right">
+                              <p class="text-xl font-bold text-gray-900">${cartUtils.formatUsdPrice(
+                                totalPrice
+                              )}</p>
+                              <button class="text-red-600 hover:text-red-800 text-sm mt-2" onclick="removeItem('${
+                                item.cartId
+                              }')">
+                                  Remove
+                              </button>
+                          </div>
+                      </div>
+                      `;
           })
           .join("");
 
@@ -565,13 +573,13 @@
       closeMenu.addEventListener("click", () => {
         sideMenu.classList.add("-translate-x-full");
       });
-
       // 🔍 Search Bar Toggle
       const searchIcon = document.getElementById("searchIcon");
       const searchBar = document.getElementById("searchBar");
       const searchInput = searchBar.querySelector("input");
       let isVisible = false;
 
+      // Toggle search bar on click
       searchIcon.addEventListener("click", () => {
         if (!isVisible) {
           searchBar.classList.remove("opacity-0", "scale-y-0");
@@ -585,14 +593,21 @@
         }
       });
 
-      // 🔎 Hide search bar on ENTER
+      // 🔎 On ENTER → hide bar & go to all1.html
       searchInput.addEventListener("keydown", (e) => {
         if (e.key === "Enter") {
           e.preventDefault();
+
+          // hide bar
           searchBar.classList.remove("opacity-100", "scale-y-100");
           searchBar.classList.add("opacity-0", "scale-y-0");
           isVisible = false;
+
+          // clear input
           searchInput.value = "";
+
+          // redirect
+          window.location.href = "all1.html";
         }
       });
     </script>
